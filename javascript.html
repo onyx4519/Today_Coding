@@ -17,13 +17,169 @@
 
     <section class="section paper lesson-content">
       <div class="container content-grid">
-        <aside class="side-index"><span>이 페이지에서 배울 내용</span><a href="#meaning">01 JavaScript의 역할</a><a href="#flow">02 동작 흐름</a><a href="#example">03 클릭 기능 만들기</a></aside>
+        <aside class="side-index">
+          <span>이 페이지에서 배울 내용</span>
+          <a href="#meaning">01 JavaScript의 역할</a>
+          <a href="#connect-js">02 JavaScript 연결</a>
+          <a href="#syntax-js">03 코드 읽는 법</a>
+          <a href="#variable">04 변수</a>
+          <a href="#value-type">05 값의 종류</a>
+          <a href="#find-element">06 HTML 요소 찾기</a>
+          <a href="#flow">07 클릭 동작 흐름</a>
+          <a href="#change-page">08 화면 내용 바꾸기</a>
+          <a href="#condition">09 조건 판단</a>
+          <a href="#example">10 클릭 기능 실습</a>
+        </aside>
         <div class="article">
           <section id="meaning"><span class="kicker">01 · MEANING</span><h2>JavaScript는 무엇을 하나요?</h2><p>HTML과 CSS만으로도 페이지를 보여줄 수 있지만, 사용자의 행동에 반응하려면 JavaScript가 필요합니다. 버튼을 누르면 글자가 바뀌거나 메뉴가 열리는 기능이 대표적인 예입니다.</p><div class="note"><b>이것만 기억하세요</b><p>JavaScript = 어떤 일이 일어났을 때 실행할 행동을 정하는 언어</p></div></section>
 
-          <section id="flow"><span class="kicker">02 · EVENT FLOW</span><h2>동작은 세 단계로 생각하세요.</h2><div class="flow-cards"><div><span>01</span><b>요소 찾기</b><p>기능을 넣을 버튼을 찾습니다.</p></div><i>→</i><div><span>02</span><b>행동 기다리기</b><p>사용자의 클릭을 기다립니다.</p></div><i>→</i><div><span>03</span><b>결과 실행</b><p>글자를 바꾸거나 알림을 띄웁니다.</p></div></div></section>
+          <section id="connect-js">
+            <span class="kicker">02 · CONNECT</span>
+            <h2>HTML과 JavaScript를 연결합니다.</h2>
+            <p>JavaScript 파일도 HTML에 연결해야 실행됩니다. 두 파일을 같은 폴더에 만들고 <code>&lt;/body&gt;</code> 바로 앞에 <code>&lt;script&gt;&lt;/script&gt;</code> 태그를 작성하세요.</p>
+            <div class="file-structure-grid js-file-connection">
+              <pre class="project-tree" aria-label="HTML과 JavaScript 파일 구성">my-page/
+├─ index.html
+└─ script.js</pre>
+              <div class="code-block">
+                <div class="code-title"><span>index.html</span><button class="copy-code" type="button">COPY</button></div>
+                <pre><code>  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+              </div>
+            </div>
+            <div class="js-explain-grid">
+              <article><code>script</code><b>JavaScript 연결 태그</b><p>HTML에서 JavaScript 파일을 불러옵니다.</p></article>
+              <article><code>src="script.js"</code><b>파일 위치 지정</b><p>같은 폴더에 있는 script.js 파일을 찾습니다.</p></article>
+              <article><code>&lt;/body&gt; 앞</code><b>HTML을 읽은 다음 실행</b><p>버튼과 제목이 만들어진 뒤 JavaScript가 요소를 찾도록 합니다.</p></article>
+            </div>
+            <div class="note"><b>연결이 되지 않을 때</b><p>파일 이름이 <code>script.js</code>로 정확한지, HTML과 같은 폴더에 있는지 먼저 확인하세요.</p></div>
+          </section>
 
-          <section id="example"><span class="kicker">03 · FIRST ACTION</span><h2>버튼 클릭 기능을 만들어 봅시다.</h2><p>아래 코드는 버튼을 찾은 뒤, 클릭했을 때 글자를 변경합니다. 따옴표 안의 한국어를 수정해 보세요.</p><div class="code-block"><div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div><pre><code>const button = document.querySelector("button");
+          <section id="syntax-js">
+            <span class="kicker">03 · SYNTAX</span>
+            <h2>JavaScript 코드의 기호를 읽어봅시다.</h2>
+            <p>처음에는 모든 문법을 외우기보다 각 기호가 어떤 역할을 하는지 이해하는 것이 중요합니다.</p>
+            <div class="code-block js-basic-code">
+              <div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>// 화면에 보여줄 문장을 저장합니다.
+const message = "안녕하세요";
+
+console.log(message);</code></pre>
+            </div>
+            <div class="js-syntax-grid">
+              <article><code>//</code><b>주석</b><p>코드에 설명을 적습니다. 실행 결과에는 영향을 주지 않습니다.</p></article>
+              <article><code>const</code><b>변수 선언</b><p>값을 기억할 이름을 새로 만듭니다.</p></article>
+              <article><code>=</code><b>값 저장</b><p>오른쪽 값을 왼쪽 이름에 저장합니다.</p></article>
+              <article><code>"안녕하세요"</code><b>문자열</b><p>글자는 따옴표로 감싸서 작성합니다.</p></article>
+              <article><code>( )</code><b>함수에 값 전달</b><p>실행할 명령에 필요한 값을 넣는 자리입니다.</p></article>
+              <article><code>;</code><b>명령 종료</b><p>한 줄의 명령이 끝났음을 표시합니다.</p></article>
+            </div>
+          </section>
+
+          <section id="variable">
+            <span class="kicker">04 · VARIABLE</span>
+            <h2>변수는 값을 기억하는 이름표입니다.</h2>
+            <p>자주 사용하거나 나중에 다시 사용할 값을 변수에 저장합니다. 이름은 값의 의미를 알 수 있도록 작성하는 것이 좋습니다.</p>
+            <div class="js-variable-compare">
+              <article><span>값을 다시 바꾸지 않을 때</span><div class="css-rule"><span class="property">const</span> userName = <span class="value">"홍길동"</span>;</div><p><code>const</code>는 처음 저장한 값을 다른 값으로 다시 바꾸지 않을 때 사용합니다.</p></article>
+              <article><span>값이 변할 수 있을 때</span><div class="css-rule"><span class="property">let</span> count = <span class="value">0</span>;<br>count = <span class="value">1</span>;</div><p><code>let</code>은 점수나 횟수처럼 실행 중에 값이 달라질 때 사용합니다.</p></article>
+            </div>
+            <div class="warning-card"><b>변수 이름 작성 규칙</b><p>공백 대신 <code>userName</code>처럼 두 번째 단어의 첫 글자를 대문자로 작성합니다. 숫자로 시작하거나 <code>const</code> 같은 문법 이름을 변수명으로 사용할 수 없습니다.</p></div>
+          </section>
+
+          <section id="value-type">
+            <span class="kicker">05 · VALUE TYPE</span>
+            <h2>JavaScript가 다루는 값에는 종류가 있습니다.</h2>
+            <p>초보 단계에서는 글자, 숫자, 참과 거짓 세 가지를 먼저 구분하면 됩니다. 글자에만 따옴표를 사용한다는 점을 기억하세요.</p>
+            <div class="js-value-grid">
+              <article><span>STRING · 문자열</span><h3><code>"안녕하세요"</code></h3><p>이름, 제목과 안내 문구 같은 글자입니다.</p></article>
+              <article><span>NUMBER · 숫자</span><h3><code>25</code></h3><p>나이, 점수와 횟수처럼 계산할 수 있는 값입니다.</p></article>
+              <article><span>BOOLEAN · 불리언</span><h3><code>true</code> / <code>false</code></h3><p>켜짐과 꺼짐처럼 참 또는 거짓을 나타냅니다.</p></article>
+            </div>
+            <div class="css-compare-grid">
+              <article><code>"10" + "5" → "105"</code><b>따옴표가 있으면 글자입니다.</b><p>문자열끼리 더하면 두 글자가 이어집니다.</p></article>
+              <article><code>10 + 5 → 15</code><b>따옴표가 없으면 숫자입니다.</b><p>숫자끼리 더하면 계산 결과가 나옵니다.</p></article>
+            </div>
+          </section>
+
+          <section id="find-element">
+            <span class="kicker">06 · FIND ELEMENT</span>
+            <h2>기능을 넣을 HTML 요소부터 찾습니다.</h2>
+            <p>JavaScript가 버튼이나 제목을 바꾸려면 먼저 해당 요소를 선택해야 합니다. <code>document.querySelector()</code> 안에는 CSS 선택자를 작성합니다.</p>
+            <div class="js-dom-example">
+              <div class="code-block">
+                <div class="code-title"><span>index.html</span><button class="copy-code" type="button">COPY</button></div>
+                <pre><code>&lt;button id="startButton"&gt;
+  시작하기
+&lt;/button&gt;</code></pre>
+              </div>
+              <div class="code-block">
+                <div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div>
+                <pre><code>const button = document.querySelector(
+  "#startButton"
+);</code></pre>
+              </div>
+            </div>
+            <div class="js-method-guide">
+              <article><code>document</code><p>현재 브라우저에 열린 HTML 문서 전체를 뜻합니다.</p></article>
+              <article><code>querySelector</code><p>조건과 일치하는 첫 번째 HTML 요소를 찾습니다.</p></article>
+              <article><code>"#startButton"</code><p><code>id="startButton"</code>인 요소를 선택합니다.</p></article>
+            </div>
+            <div class="note"><b>선택자가 일치해야 합니다</b><p>HTML의 <code>id="startButton"</code>과 JavaScript의 <code>"#startButton"</code> 철자가 다르면 버튼을 찾지 못합니다.</p></div>
+          </section>
+
+          <section id="flow">
+            <span class="kicker">07 · EVENT FLOW</span>
+            <h2>클릭 동작은 세 단계로 생각하세요.</h2>
+            <div class="flow-cards"><div><span>01</span><b>요소 찾기</b><p>기능을 넣을 버튼을 찾습니다.</p></div><i>→</i><div><span>02</span><b>행동 기다리기</b><p>사용자의 클릭을 기다립니다.</p></div><i>→</i><div><span>03</span><b>결과 실행</b><p>글자를 바꾸거나 안내를 표시합니다.</p></div></div>
+            <div class="code-block js-event-code">
+              <div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>button.addEventListener("click", function () {
+  // 클릭했을 때 실행할 코드
+});</code></pre>
+            </div>
+            <div class="js-method-guide">
+              <article><code>addEventListener</code><p>사용자의 행동이 일어나는지 기다립니다.</p></article>
+              <article><code>"click"</code><p>기다릴 행동이 마우스 클릭이라는 뜻입니다.</p></article>
+              <article><code>function () { }</code><p>클릭했을 때 실행할 코드를 중괄호 안에 작성합니다.</p></article>
+            </div>
+          </section>
+
+          <section id="change-page">
+            <span class="kicker">08 · CHANGE PAGE</span>
+            <h2>찾은 요소의 내용과 모양을 바꿀 수 있습니다.</h2>
+            <p>JavaScript는 HTML 글자를 바꾸거나 CSS 클래스를 추가할 수 있습니다. 점 뒤에 실행할 기능의 이름을 이어서 작성합니다.</p>
+            <div class="js-change-grid">
+              <article><span>글자 바꾸기</span><div class="css-rule">title.<span class="property">textContent</span> = <span class="value">"반갑습니다!"</span>;</div><p><code>textContent</code>는 요소 안의 글자를 새로운 문장으로 바꿉니다.</p></article>
+              <article><span>클래스 추가하기</span><div class="css-rule">card.<span class="property">classList.add</span>(<span class="value">"active"</span>);</div><p>HTML 요소에 <code>active</code> 클래스를 추가해 미리 만든 CSS 디자인을 적용합니다.</p></article>
+            </div>
+            <div class="note"><b>디자인은 CSS에 작성하세요</b><p>JavaScript에서는 클래스를 추가하거나 제거하고, 실제 색상과 크기는 CSS의 <code>.active</code>에 작성하면 코드를 관리하기 쉽습니다.</p></div>
+          </section>
+
+          <section id="condition">
+            <span class="kicker">09 · CONDITION</span>
+            <h2>조건에 따라 다른 결과를 실행할 수 있습니다.</h2>
+            <p><code>if</code>는 괄호 안의 조건이 참일 때 코드를 실행합니다. 조건이 거짓일 때는 <code>else</code> 안의 코드를 실행합니다.</p>
+            <div class="code-block">
+              <div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>const age = 20;
+
+if (age &gt;= 18) {
+  console.log("입장할 수 있습니다.");
+} else {
+  console.log("입장할 수 없습니다.");
+}</code></pre>
+            </div>
+            <div class="js-condition-flow">
+              <article><code>age &gt;= 18</code><b>조건 확인</b><p>age가 18 이상인지 비교합니다.</p></article>
+              <span>참이면 →</span>
+              <article><code>첫 번째 { }</code><b>조건이 참일 때</b><p>“입장할 수 있습니다.”를 실행합니다.</p></article>
+              <span>거짓이면 →</span>
+              <article><code>else { }</code><b>조건이 거짓일 때</b><p>다른 안내 문구를 실행합니다.</p></article>
+            </div>
+          </section>
+
+          <section id="example"><span class="kicker">10 · FIRST ACTION</span><h2>버튼 클릭 기능을 만들어 봅시다.</h2><p>아래 코드는 버튼을 찾은 뒤, 클릭했을 때 글자를 변경합니다. 따옴표 안의 한국어를 수정해 보세요.</p><div class="code-block"><div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div><pre><code>const button = document.querySelector("button");
 
 button.addEventListener("click", function () {
   button.textContent = "<span class="editable-code" id="jsResultCode" contenteditable="true" role="textbox" aria-label="JavaScript 결과 문구 수정" data-run="runJsExample" spellcheck="false">첫 기능 완성!</span>";
@@ -34,7 +190,7 @@ button.addEventListener("click", function () {
     </section>
   </main>
 
-  <footer class="footer"><div class="container footer-row"><a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a><p>JavaScript는 웹페이지에 동작과 반응을 더합니다.</p><a href="roadmap.html">다음: 학습 순서 →</a></div></footer>
+  <footer class="footer"><div class="container footer-row"><a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a><p>JavaScript는 웹페이지에 동작과 반응을 더합니다.</p><a href="project.html">다음: 프로젝트 실습 →</a></div></footer>
   <script src="script.js"></script>
 </body>
 </html>
