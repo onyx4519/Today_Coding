@@ -12,18 +12,39 @@ const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuButton && navLinks) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
+  if (!navLinks.id) navLinks.id = "primaryNavigation";
+  menuButton.setAttribute("aria-controls", navLinks.id);
+
+  const setMenuState = (isOpen) => {
+    navLinks.classList.toggle("open", isOpen);
     menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute("aria-label", isOpen ? "메뉴 닫기" : "메뉴 열기");
     menuButton.textContent = isOpen ? "닫기" : "메뉴";
+  };
+
+  menuButton.addEventListener("click", () => {
+    setMenuState(!navLinks.classList.contains("open"));
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.textContent = "메뉴";
-    });
+    link.addEventListener("click", () => setMenuState(false));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (navLinks.classList.contains("open") && !navLinks.contains(event.target) && !menuButton.contains(event.target)) {
+      setMenuState(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navLinks.classList.contains("open")) {
+      setMenuState(false);
+      menuButton.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 720) setMenuState(false);
   });
 }
 
