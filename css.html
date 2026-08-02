@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="완전 초보자를 위한 CSS 기초 설명">
+  <title>CSS 기초 | 코드한입</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="css">
+  <header class="site-header solid"><nav class="nav container" aria-label="주요 메뉴"><a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a><button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">메뉴</button><div class="nav-links"><a data-nav="home" href="index.html">처음으로</a><a data-nav="html" href="html.html">HTML</a><a data-nav="css" href="css.html">CSS</a><a data-nav="javascript" href="javascript.html">JavaScript</a><a data-nav="extensions" href="extensions.html">확장 프로그램</a><a data-nav="roadmap" href="roadmap.html">학습 순서</a></div></nav></header>
+
+  <main>
+    <section class="lesson-hero lesson-css">
+      <div class="container lesson-hero-grid"><div><span class="lesson-index">02 · STYLE & LAYOUT</span><span class="big-symbol">#CSS</span></div><div><span class="analogy">쉽게 말하면, 인테리어와 옷</span><h1>CSS는 페이지의<br><span>모양과 분위기</span>를 꾸며요.</h1><p>색상, 글꼴, 크기, 간격과 배치를 정하는 언어입니다. 같은 HTML도 CSS에 따라 완전히 다른 모습으로 바뀝니다.</p></div></div>
+    </section>
+
+    <section class="section paper lesson-content">
+      <div class="container content-grid">
+        <aside class="side-index"><span>이 페이지에서 배울 내용</span><a href="#meaning">01 CSS의 의미</a><a href="#rule">02 규칙 읽는 법</a><a href="#example">03 스타일 적용</a></aside>
+        <div class="article">
+          <section id="meaning"><span class="kicker">01 · MEANING</span><h2>CSS는 무엇인가요?</h2><p>CSS는 <strong>Cascading Style Sheets</strong>의 줄임말입니다. HTML로 만든 요소를 어떤 색과 크기로 보여줄지 결정합니다.</p><div class="before-after"><div><small>CSS 적용 전</small><div class="plain-card"><h3>안녕, 웹!</h3><p>첫 페이지예요.</p><button>시작하기</button></div></div><div><small>CSS 적용 후</small><div class="styled-card"><h3>안녕, 웹!</h3><p>첫 페이지예요.</p><button>시작하기</button></div></div></div></section>
+
+          <section id="rule"><span class="kicker">02 · RULE</span><h2>선택하고, 속성을 정합니다.</h2><p>CSS 규칙은 “무엇을 꾸밀지” 선택한 뒤 중괄호 안에 “어떻게 꾸밀지” 적는 구조입니다.</p><div class="css-rule"><span class="selector">.card</span> <span>{</span><br><span class="property">&nbsp;&nbsp;background</span>: <span class="value">#171727</span>;<br><span class="property">&nbsp;&nbsp;border-radius</span>: <span class="value">24px</span>;<br><span>}</span></div><div class="note"><b>단위도 확인하세요</b><p>px는 화면의 크기를 나타내는 가장 기본적인 단위입니다.</p></div></section>
+
+          <section id="example">
+            <span class="kicker">03 · FIRST STYLE</span>
+            <h2>첫 CSS 코드를 적용해 봅시다.</h2>
+            <p>HTML의 <code>class="card"</code> 요소와 그 안의 제목, 문단, 버튼을 각각 꾸밉니다. 강조된 CSS 값을 수정한 뒤 결과가 어떻게 달라지는지 확인해 보세요.</p>
+            <div class="code-block">
+              <div class="code-title">
+                <span>styles.css</span>
+                <button class="copy-code" type="button">COPY</button>
+              </div>
+              <pre><code>.card {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: <span class="editable-code" contenteditable="true" role="textbox" aria-label="카드 안쪽 여백 수정" data-css-target="cssPreview" data-css-property="padding" data-run="runCssExample" spellcheck="false">32px</span>;
+  border: 1px solid #35354a;
+  border-radius: <span class="editable-code" contenteditable="true" role="textbox" aria-label="카드 모서리 둥글기 수정" data-css-target="cssPreview" data-css-property="border-radius" data-run="runCssExample" spellcheck="false">24px</span>;
+  background: <span class="editable-code" contenteditable="true" role="textbox" aria-label="카드 배경색 수정" data-css-target="cssPreview" data-css-property="background" data-run="runCssExample" spellcheck="false">#171727</span>;
+  box-shadow: 0 18px 45px rgba(23, 23, 39, 0.28);
+  text-align: center;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  color: <span class="editable-code" contenteditable="true" role="textbox" aria-label="제목 글자색 수정" data-css-target="cssPreviewTitle" data-css-property="color" data-run="runCssExample" spellcheck="false">#f7f7fb</span>;
+  font-size: <span class="editable-code" contenteditable="true" role="textbox" aria-label="제목 글자 크기 수정" data-css-target="cssPreviewTitle" data-css-property="font-size" data-run="runCssExample" spellcheck="false">28px</span>;
+}
+
+.card p {
+  margin: 0 0 20px;
+  color: <span class="editable-code" contenteditable="true" role="textbox" aria-label="문단 글자색 수정" data-css-target="cssPreviewText" data-css-property="color" data-run="runCssExample" spellcheck="false">#b8b5c7</span>;
+  line-height: <span class="editable-code" contenteditable="true" role="textbox" aria-label="문단 줄 간격 수정" data-css-target="cssPreviewText" data-css-property="line-height" data-run="runCssExample" spellcheck="false">1.7</span>;
+}
+
+.card button {
+  padding: <span class="editable-code" contenteditable="true" role="textbox" aria-label="버튼 안쪽 여백 수정" data-css-target="cssPreviewButton" data-css-property="padding" data-run="runCssExample" spellcheck="false">10px 18px</span>;
+  border: 0;
+  border-radius: <span class="editable-code" contenteditable="true" role="textbox" aria-label="버튼 모서리 둥글기 수정" data-css-target="cssPreviewButton" data-css-property="border-radius" data-run="runCssExample" spellcheck="false">8px</span>;
+  background: <span class="editable-code" contenteditable="true" role="textbox" aria-label="버튼 배경색 수정" data-css-target="cssPreviewButton" data-css-property="background" data-run="runCssExample" spellcheck="false">#7650e6</span>;
+  color: <span class="editable-code" contenteditable="true" role="textbox" aria-label="버튼 글자색 수정" data-css-target="cssPreviewButton" data-css-property="color" data-run="runCssExample" spellcheck="false">#ffffff</span>;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+}</code></pre>
+              <div class="code-run-bar">
+                <span>CSS 값을 수정한 뒤</span>
+                <button id="runCssExample" type="button">START →</button>
+              </div>
+            </div>
+            <div class="result-example example-output">
+              <small>브라우저 결과</small>
+              <div class="css-live-preview" id="cssPreview">
+                <h3 id="cssPreviewTitle">안녕, 웹!</h3>
+                <p id="cssPreviewText">내가 만든 첫 페이지예요.</p>
+                <button id="cssPreviewButton" type="button">시작하기</button>
+              </div>
+            </div>
+          </section>
+          <div class="next-lesson"><span>다음 단계</span><h3>보기 좋게 꾸몄으니 이제 버튼에 기능을 넣어볼까요?</h3><a class="button primary" href="javascript.html">JavaScript 배우기 →</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-row"><a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a><p>CSS는 웹페이지의 모양과 배치를 정합니다.</p><a href="javascript.html">다음: JavaScript →</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

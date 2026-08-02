@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="완전 초보자를 위한 JavaScript 기초 설명">
+  <title>JavaScript 기초 | 코드한입</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="javascript">
+  <header class="site-header solid"><nav class="nav container" aria-label="주요 메뉴"><a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a><button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">메뉴</button><div class="nav-links"><a data-nav="home" href="index.html">처음으로</a><a data-nav="html" href="html.html">HTML</a><a data-nav="css" href="css.html">CSS</a><a data-nav="javascript" href="javascript.html">JavaScript</a><a data-nav="extensions" href="extensions.html">확장 프로그램</a><a data-nav="roadmap" href="roadmap.html">학습 순서</a></div></nav></header>
+
+  <main>
+    <section class="lesson-hero lesson-js">
+      <div class="container lesson-hero-grid"><div><span class="lesson-index">03 · ACTION & RESPONSE</span><span class="big-symbol">JS()</span></div><div><span class="analogy">쉽게 말하면, 전기와 스위치</span><h1>JavaScript는 페이지에<br><span>움직임과 반응</span>을 더해요.</h1><p>버튼 클릭, 글자 입력, 화면 변화처럼 사용자의 행동에 반응할 기능을 만드는 프로그래밍 언어입니다.</p></div></div>
+    </section>
+
+    <section class="section paper lesson-content">
+      <div class="container content-grid">
+        <aside class="side-index"><span>이 페이지에서 배울 내용</span><a href="#meaning">01 JavaScript의 역할</a><a href="#flow">02 동작 흐름</a><a href="#example">03 클릭 기능 만들기</a></aside>
+        <div class="article">
+          <section id="meaning"><span class="kicker">01 · MEANING</span><h2>JavaScript는 무엇을 하나요?</h2><p>HTML과 CSS만으로도 페이지를 보여줄 수 있지만, 사용자의 행동에 반응하려면 JavaScript가 필요합니다. 버튼을 누르면 글자가 바뀌거나 메뉴가 열리는 기능이 대표적인 예입니다.</p><div class="note"><b>이것만 기억하세요</b><p>JavaScript = 어떤 일이 일어났을 때 실행할 행동을 정하는 언어</p></div></section>
+
+          <section id="flow"><span class="kicker">02 · EVENT FLOW</span><h2>동작은 세 단계로 생각하세요.</h2><div class="flow-cards"><div><span>01</span><b>요소 찾기</b><p>기능을 넣을 버튼을 찾습니다.</p></div><i>→</i><div><span>02</span><b>행동 기다리기</b><p>사용자의 클릭을 기다립니다.</p></div><i>→</i><div><span>03</span><b>결과 실행</b><p>글자를 바꾸거나 알림을 띄웁니다.</p></div></div></section>
+
+          <section id="example"><span class="kicker">03 · FIRST ACTION</span><h2>버튼 클릭 기능을 만들어 봅시다.</h2><p>아래 코드는 버튼을 찾은 뒤, 클릭했을 때 글자를 변경합니다. 따옴표 안의 한국어를 수정해 보세요.</p><div class="code-block"><div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div><pre><code>const button = document.querySelector("button");
+
+button.addEventListener("click", function () {
+  button.textContent = "<span class="editable-code" id="jsResultCode" contenteditable="true" role="textbox" aria-label="JavaScript 결과 문구 수정" data-run="runJsExample" spellcheck="false">첫 기능 완성!</span>";
+});</code></pre><div class="code-run-bar"><span>결과 문구를 수정한 뒤</span><button id="runJsExample" type="button">START →</button></div></div><div class="interactive-test example-output"><small>실행 결과</small><h3 id="testMessage">버튼을 누르면 글자가 바뀝니다.</h3></div></section>
+          <div class="next-lesson"><span>다음 단계</span><h3>세 언어를 이해했다면 작업을 편하게 해 줄 확장을 준비하세요.</h3><a class="button primary" href="extensions.html">VS Code 확장 알아보기 →</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-row"><a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a><p>JavaScript는 웹페이지에 동작과 반응을 더합니다.</p><a href="roadmap.html">다음: 학습 순서 →</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>

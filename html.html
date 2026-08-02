@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="완전 초보자를 위한 HTML 기초와 자주 사용하는 태그 설명">
+  <title>HTML 기초 | 코드한입</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="html">
+  <header class="site-header solid">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span>오늘의 코딩</span>
+      </a>
+      <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+      <div class="nav-links">
+        <a data-nav="home" href="index.html">처음으로</a>
+        <a data-nav="html" href="html.html">HTML</a>
+        <a data-nav="css" href="css.html">CSS</a>
+        <a data-nav="javascript" href="javascript.html">JavaScript</a>
+        <a data-nav="extensions" href="extensions.html">확장 프로그램</a>
+        <a data-nav="roadmap" href="roadmap.html">학습 순서</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="lesson-hero lesson-html">
+      <div class="container lesson-hero-grid">
+        <div>
+          <span class="lesson-index">01 · CONTENT & STRUCTURE</span>
+          <span class="big-symbol">&lt;HTML&gt;</span>
+        </div>
+        <div>
+          <span class="analogy">쉽게 말하면, 집의 뼈대</span>
+          <h1>HTML은 페이지의<br><span>내용과 구조</span>를 만들어요.</h1>
+          <p>제목, 문단, 이미지, 버튼처럼 화면에 무엇을 놓을지 정하는 언어입니다. 웹페이지를 만들 때 가장 먼저 작성해요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper lesson-content">
+      <div class="container content-grid">
+        <aside class="side-index">
+          <span>이 페이지에서 배울 내용</span>
+          <a href="#meaning">01 HTML의 의미</a>
+          <a href="#tags">02 태그 읽는 법</a>
+          <a href="#document-start">03 문서 첫 부분 읽기</a>
+          <a href="#common-tags">04 자주 사용하는 태그</a>
+          <a href="#example">05 첫 코드 작성</a>
+          <a href="#challenge">06 직접 태그 작성</a>
+        </aside>
+
+        <div class="article">
+          <section id="meaning">
+            <span class="kicker">01 · MEANING</span>
+            <h2>HTML은 무엇인가요?</h2>
+            <p>HTML은 <strong>HyperText Markup Language</strong>의 줄임말입니다. 이름은 길지만 핵심은 간단합니다. 브라우저에게 “이 글은 제목이고, 이 부분은 문단이야”라고 알려주는 표시 언어예요.</p>
+            <div class="note">
+              <b>이것만 기억하세요</b>
+              <p>HTML = 웹페이지에 들어갈 내용과 순서를 정하는 코드</p>
+            </div>
+          </section>
+
+          <section id="tags">
+            <span class="kicker">02 · HOW TO READ TAGS</span>
+            <h2>태그는 상자처럼 생각하세요.</h2>
+            <p>대부분의 HTML 요소는 여는 태그와 닫는 태그가 한 쌍입니다. 두 태그 사이에 실제 내용을 넣습니다.</p>
+            <div class="concept-diagram">
+              <span class="code-token">&lt;h1&gt;</span>
+              <span class="content-token">안녕, 웹!</span>
+              <span class="code-token">&lt;/h1&gt;</span>
+            </div>
+            <div class="term-row">
+              <span>여는 태그</span>
+              <span>화면에 보이는 내용</span>
+              <span>닫는 태그</span>
+            </div>
+            <div class="note">
+              <b>닫는 태그에는 슬래시가 들어갑니다.</b>
+              <p><code>&lt;h1&gt;</code>으로 시작했다면 <code>&lt;/h1&gt;</code>으로 닫아야 합니다. 단, <code>&lt;img&gt;</code>와 <code>&lt;input&gt;</code>처럼 닫는 태그가 없는 요소도 있습니다.</p>
+            </div>
+          </section>
+
+          <section id="document-start">
+            <span class="kicker">03 · DOCUMENT START</span>
+            <h2>HTML 문서의 첫 부분을 읽어봅시다.</h2>
+            <p>이 코드는 화면에 제목이나 문단을 표시하기 전에 문서의 종류, 언어, 글자 인코딩, 모바일 화면, 브라우저 제목과 CSS 파일을 설정합니다.</p>
+
+            <div class="document-code-panel">
+              <div class="code-title">
+                <span>index.html · 1~9줄</span>
+                <span>문서 기본 설정</span>
+              </div>
+              <ol class="document-code-lines" aria-label="HTML 문서 첫 부분 코드">
+                <li><code>&lt;!doctype html&gt;</code></li>
+                <li><code>&lt;html lang="ko"&gt;</code></li>
+                <li><code>&lt;head&gt;</code></li>
+                <li><code>  &lt;meta charset="UTF-8"&gt;</code></li>
+                <li><code>  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></li>
+                <li><code>  &lt;meta name="description" content="코드를 처음 배우는 사람을 위한 웹페이지 제작 안내서"&gt;</code></li>
+                <li><code>  &lt;title&gt;웹페이지 제작 시작하기&lt;/title&gt;</code></li>
+                <li><code>  &lt;link rel="stylesheet" href="styles.css"&gt;</code></li>
+                <li><code>&lt;/head&gt;</code></li>
+              </ol>
+            </div>
+
+            <div class="document-line-guide">
+              <article>
+                <span>01</span>
+                <div><code>&lt;!doctype html&gt;</code><p>현재 문서가 최신 HTML 형식인 HTML5 문서라는 것을 브라우저에 알립니다. 태그가 아니므로 닫는 태그가 없습니다.</p></div>
+              </article>
+              <article>
+                <span>02</span>
+                <div><code>&lt;html lang="ko"&gt;</code><p>HTML 문서 전체를 감싸는 시작 태그입니다. <code>lang="ko"</code>는 기본 언어가 한국어라는 뜻이며, 파일 마지막에는 <code>&lt;/html&gt;</code>로 닫습니다.</p></div>
+              </article>
+              <article>
+                <span>03</span>
+                <div><code>&lt;head&gt;</code><p>브라우저와 검색 서비스에 전달할 문서 설정을 담는 영역입니다. 이 안의 내용은 대부분 페이지 본문에 직접 표시되지 않습니다.</p></div>
+              </article>
+              <article>
+                <span>04</span>
+                <div><code>charset="UTF-8"</code><p>한글과 영문을 포함한 다양한 문자를 올바르게 표시하도록 문자 인코딩 방식을 지정합니다.</p></div>
+              </article>
+              <article>
+                <span>05</span>
+                <div><code>name="viewport"</code><p>휴대전화에서도 페이지 너비와 확대 비율이 화면에 맞게 표시되도록 설정합니다.</p></div>
+              </article>
+              <article>
+                <span>06</span>
+                <div><code>name="description"</code><p>페이지 내용을 짧게 요약합니다. 검색 결과나 공유 화면에서 페이지 설명으로 사용될 수 있습니다.</p></div>
+              </article>
+              <article>
+                <span>07</span>
+                <div><code>&lt;title&gt;…&lt;/title&gt;</code><p>브라우저 탭에 표시되는 페이지 이름을 작성합니다. 페이지마다 내용을 구분할 수 있는 제목을 사용합니다.</p></div>
+              </article>
+              <article>
+                <span>08</span>
+                <div><code>&lt;link rel="stylesheet" …&gt;</code><p>현재 HTML 문서와 <code>styles.css</code> 파일을 연결합니다. <code>href</code>에는 CSS 파일의 위치를 적습니다.</p></div>
+              </article>
+              <article>
+                <span>09</span>
+                <div><code>&lt;/head&gt;</code><p><code>&lt;head&gt;</code> 설정 영역을 닫습니다. 그다음에 화면에 보이는 내용을 담는 <code>&lt;body&gt;…&lt;/body&gt;</code>를 작성합니다.</p></div>
+              </article>
+            </div>
+
+            <div class="note">
+              <b><code>&lt;head&gt;</code>와 <code>&lt;body&gt;</code>를 구분하세요.</b>
+              <p><code>&lt;head&gt;</code>에는 페이지 설정을, <code>&lt;body&gt;</code>에는 제목·문단·이미지·버튼처럼 화면에 보일 내용을 넣습니다.</p>
+            </div>
+          </section>
+
+          <section id="common-tags">
+            <span class="kicker">04 · COMMON TAGS</span>
+            <h2>웹페이지에서 자주 사용하는 태그</h2>
+            <p>처음부터 모든 태그를 외울 필요는 없습니다. 태그 위에 마우스를 올리면 자세한 사용법과 올바른 예시 구조가 나타납니다. 모바일에서는 태그를 눌러 확인할 수 있습니다.</p>
+
+            <div class="tag-guide-grid">
+              <article class="tag-guide-card">
+                <div class="tag-guide-heading">
+                  <span>01</span>
+                  <div><small>PAGE STRUCTURE</small><h3>페이지 구조</h3></div>
+                </div>
+                <dl class="tag-reference-list">
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="header" aria-describedby="tagUsageTooltip"><code>&lt;header&gt;…&lt;/header&gt;</code></button></dt><dd>페이지나 구역의 머리말을 만듭니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="nav" aria-describedby="tagUsageTooltip"><code>&lt;nav&gt;…&lt;/nav&gt;</code></button></dt><dd>메뉴와 주요 이동 링크를 묶습니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="main" aria-describedby="tagUsageTooltip"><code>&lt;main&gt;…&lt;/main&gt;</code></button></dt><dd>페이지의 핵심 내용을 감쌉니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="section" aria-describedby="tagUsageTooltip"><code>&lt;section&gt;…&lt;/section&gt;</code></button></dt><dd>주제가 같은 내용을 하나의 구역으로 나눕니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="footer" aria-describedby="tagUsageTooltip"><code>&lt;footer&gt;…&lt;/footer&gt;</code></button></dt><dd>저작권이나 추가 링크가 있는 바닥글을 만듭니다.</dd></div>
+                </dl>
+              </article>
+
+              <article class="tag-guide-card">
+                <div class="tag-guide-heading">
+                  <span>02</span>
+                  <div><small>TEXT</small><h3>제목과 글</h3></div>
+                </div>
+                <dl class="tag-reference-list">
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="heading" aria-describedby="tagUsageTooltip"><code>&lt;h1&gt;…&lt;/h1&gt;</code></button></dt><dd><code>&lt;h1&gt;…&lt;/h1&gt;</code>부터 <code>&lt;h6&gt;…&lt;/h6&gt;</code>까지 중요도에 따라 제목을 만듭니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="p" aria-describedby="tagUsageTooltip"><code>&lt;p&gt;…&lt;/p&gt;</code></button></dt><dd>하나의 문단을 작성합니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="strong" aria-describedby="tagUsageTooltip"><code>&lt;strong&gt;…&lt;/strong&gt;</code></button></dt><dd>문장에서 중요한 내용을 강조합니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="br" aria-describedby="tagUsageTooltip"><code>&lt;br&gt;</code></button></dt><dd>문장 안에서 줄을 한 번 바꿉니다. <span class="void-note">닫는 태그 없음</span></dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="hr" aria-describedby="tagUsageTooltip"><code>&lt;hr&gt;</code></button></dt><dd>서로 다른 주제 사이를 구분하는 선을 만듭니다. <span class="void-note">닫는 태그 없음</span></dd></div>
+                </dl>
+              </article>
+
+              <article class="tag-guide-card">
+                <div class="tag-guide-heading">
+                  <span>03</span>
+                  <div><small>LINKS & LISTS</small><h3>링크와 목록</h3></div>
+                </div>
+                <dl class="tag-reference-list">
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="a" aria-describedby="tagUsageTooltip"><code>&lt;a&gt;…&lt;/a&gt;</code></button></dt><dd>다른 페이지나 외부 사이트로 이동하는 링크를 만듭니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="ul" aria-describedby="tagUsageTooltip"><code>&lt;ul&gt;…&lt;/ul&gt;</code></button></dt><dd>순서가 중요하지 않은 글머리표 목록을 만듭니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="ol" aria-describedby="tagUsageTooltip"><code>&lt;ol&gt;…&lt;/ol&gt;</code></button></dt><dd>1, 2, 3처럼 순서가 있는 목록을 만듭니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="li" aria-describedby="tagUsageTooltip"><code>&lt;li&gt;…&lt;/li&gt;</code></button></dt><dd><code>&lt;ul&gt;</code>이나 <code>&lt;ol&gt;</code> 안의 각 항목을 만듭니다.</dd></div>
+                </dl>
+              </article>
+
+              <article class="tag-guide-card">
+                <div class="tag-guide-heading">
+                  <span>04</span>
+                  <div><small>MEDIA & ACTION</small><h3>이미지와 동작</h3></div>
+                </div>
+                <dl class="tag-reference-list">
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="img" aria-describedby="tagUsageTooltip"><code>&lt;img&gt;</code></button></dt><dd>이미지를 표시합니다. <code>src</code>와 <code>alt</code> 속성을 함께 사용합니다. <span class="void-note">닫는 태그 없음</span></dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="button" aria-describedby="tagUsageTooltip"><code>&lt;button&gt;…&lt;/button&gt;</code></button></dt><dd>사용자가 누를 수 있는 버튼을 만듭니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="label" aria-describedby="tagUsageTooltip"><code>&lt;label&gt;…&lt;/label&gt;</code></button></dt><dd>입력칸이 무엇을 입력하는 곳인지 설명합니다.</dd></div>
+                  <div><dt><button class="tag-reference-button" type="button" data-tag="input" aria-describedby="tagUsageTooltip"><code>&lt;input&gt;</code></button></dt><dd>이름이나 검색어 등을 입력받는 칸을 만듭니다. <span class="void-note">닫는 태그 없음</span></dd></div>
+                </dl>
+              </article>
+            </div>
+
+            <div class="tag-usage-tooltip" id="tagUsageTooltip" role="tooltip" hidden>
+              <span class="tag-tooltip-label">TAG GUIDE</span>
+              <h3 id="tagTooltipTitle">태그 사용법</h3>
+              <p id="tagTooltipDescription"></p>
+              <pre><code id="tagTooltipExample"></code></pre>
+            </div>
+
+            <div class="common-tag-example">
+              <div>
+                <span>구조 예시</span>
+                <h3>태그는 역할에 맞게 조립합니다.</h3>
+                <p>태그의 이름만 봐도 어떤 내용이 들어 있는지 알 수 있게 작성하면 코드가 읽기 쉬워집니다.</p>
+              </div>
+              <pre><code>&lt;header&gt;사이트 이름&lt;/header&gt;
+&lt;nav&gt;메뉴 링크&lt;/nav&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h1&gt;페이지 제목&lt;/h1&gt;
+    &lt;p&gt;페이지 설명&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;저작권 정보&lt;/footer&gt;</code></pre>
+            </div>
+          </section>
+
+          <section id="example">
+            <span class="kicker">05 · FIRST CODE</span>
+            <h2>첫 HTML 코드를 읽어봅시다.</h2>
+            <p>아래 코드는 머리말, 본문 구역, 목록, 버튼과 바닥글을 가진 간단한 자기소개 페이지입니다. 강조된 한국어를 직접 바꾼 뒤 실행해 보세요.</p>
+            <div class="code-block">
+              <div class="code-title">
+                <span>index.html</span>
+                <button class="copy-code" type="button">COPY</button>
+              </div>
+              <pre><code>&lt;header class="profile-header"&gt;
+  &lt;h1&gt;<span class="editable-code" contenteditable="true" role="textbox" aria-label="HTML 제목 문구 수정" data-html-output="htmlPreviewTitle" data-run="runHtmlExample" spellcheck="false">나의 첫 웹페이지</span>&lt;/h1&gt;
+  &lt;p&gt;<span class="editable-code" contenteditable="true" role="textbox" aria-label="HTML 소개 문구 수정" data-html-output="htmlPreviewDescription" data-run="runHtmlExample" spellcheck="false">웹 개발을 배우고 있습니다.</span>&lt;/p&gt;
+&lt;/header&gt;
+
+&lt;main class="profile-main"&gt;
+  &lt;section&gt;
+    &lt;h2&gt;<span class="editable-code" contenteditable="true" role="textbox" aria-label="HTML 구역 제목 수정" data-html-output="htmlPreviewSectionTitle" data-run="runHtmlExample" spellcheck="false">좋아하는 것</span>&lt;/h2&gt;
+    &lt;ul&gt;
+      &lt;li&gt;<span class="editable-code" contenteditable="true" role="textbox" aria-label="HTML 첫 번째 목록 수정" data-html-output="htmlPreviewItemOne" data-run="runHtmlExample" spellcheck="false">3D 프린팅</span>&lt;/li&gt;
+      &lt;li&gt;<span class="editable-code" contenteditable="true" role="textbox" aria-label="HTML 두 번째 목록 수정" data-html-output="htmlPreviewItemTwo" data-run="runHtmlExample" spellcheck="false">로봇 제어</span>&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;button&gt;<span class="editable-code" contenteditable="true" role="textbox" aria-label="HTML 버튼 문구 수정" data-html-output="htmlPreviewAction" data-run="runHtmlExample" spellcheck="false">더 알아보기</span>&lt;/button&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;<span class="editable-code" contenteditable="true" role="textbox" aria-label="HTML 바닥글 문구 수정" data-html-output="htmlPreviewFooter" data-run="runHtmlExample" spellcheck="false">만든 사람: 홍길동</span>&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+              <div class="code-run-bar">
+                <span>한국어를 수정한 뒤</span>
+                <button id="runHtmlExample" type="button">START →</button>
+              </div>
+            </div>
+            <div class="result-example example-output">
+              <small>브라우저 결과</small>
+              <div class="html-preview-page">
+                <header>
+                  <h3 id="htmlPreviewTitle">나의 첫 웹페이지</h3>
+                  <p id="htmlPreviewDescription">웹 개발을 배우고 있습니다.</p>
+                </header>
+                <main>
+                  <h4 id="htmlPreviewSectionTitle">좋아하는 것</h4>
+                  <ul>
+                    <li id="htmlPreviewItemOne">3D 프린팅</li>
+                    <li id="htmlPreviewItemTwo">로봇 제어</li>
+                  </ul>
+                  <button id="htmlPreviewAction" type="button">더 알아보기</button>
+                </main>
+                <footer><p id="htmlPreviewFooter">만든 사람: 홍길동</p></footer>
+              </div>
+            </div>
+          </section>
+
+          <section id="challenge">
+            <span class="kicker">06 · WRITE IT YOURSELF</span>
+            <h2>직접 태그와 내용을 작성해 봅시다.</h2>
+            <p>아래 다섯 가지는 작성 방법을 보여주는 예시입니다. 원하는 HTML 태그만 골라 자유롭게 작성하면 입력한 코드의 결과를 확인할 수 있습니다.</p>
+
+            <div class="challenge-examples">
+              <span>작성 예시</span>
+              <ol>
+                <li><code>&lt;h1&gt;원하는 제목&lt;/h1&gt;</code><small>예: 나의 첫 웹페이지</small></li>
+                <li><code>&lt;h2&gt;원하는 소제목&lt;/h2&gt;</code><small>예: 내가 좋아하는 것</small></li>
+                <li><code>&lt;p&gt;원하는 설명&lt;/p&gt;</code><small>예: HTML을 배우고 있어요.</small></li>
+                <li><code>&lt;a href="연결 주소"&gt;원하는 링크 글자&lt;/a&gt;</code><small>예: &lt;a href="about.html"&gt;소개 보기&lt;/a&gt;</small></li>
+                <li><code>&lt;button&gt;원하는 버튼 글자&lt;/button&gt;</code><small>예: 시작하기</small></li>
+              </ol>
+            </div>
+
+            <div class="warning-card challenge-preview-notice">
+              <b>주의사항</b>
+              <p>아래 결과 화면에는 내용을 읽기 쉽도록 글꼴, 여백, 줄 간격, 이미지 크기 등을 정하는 임의의 기본 CSS가 적용되어 있습니다. 따라서 같은 HTML 코드를 새 파일에서 실행했을 때 브라우저의 기본 모양과 다르게 보일 수 있습니다.</p>
+            </div>
+
+            <div class="challenge-editor">
+              <div class="code-title">
+                <span>연습.html</span>
+                <span>직접 작성해 보세요</span>
+              </div>
+              <textarea id="htmlChallengeCode" aria-label="HTML 태그 작성 연습" spellcheck="false"></textarea>
+              <div class="challenge-actions">
+                <span>원하는 HTML 코드를 작성한 뒤</span>
+                <button id="checkHtmlChallenge" type="button">START →</button>
+              </div>
+            </div>
+
+            <div class="challenge-status" id="htmlChallengeStatus" role="status" aria-live="polite">
+              원하는 HTML 코드를 작성하고 START를 눌러주세요.
+            </div>
+
+            <div class="challenge-output" id="htmlChallengeOutput" hidden>
+              <span class="challenge-success-label">브라우저 결과</span>
+              <iframe id="htmlChallengePreview" title="직접 작성한 HTML 결과" sandbox="" referrerpolicy="no-referrer"></iframe>
+            </div>
+          </section>
+
+          <div class="next-lesson">
+            <span>다음 단계</span>
+            <h3>내용을 만들었으니 이제 보기 좋게 꾸며볼까요?</h3>
+            <a class="button primary" href="css.html">CSS 배우기 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a>
+      <p>HTML은 웹페이지의 내용과 구조를 만듭니다.</p>
+      <a href="css.html">다음: CSS →</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
