@@ -388,6 +388,19 @@ if (runJsButton && jsResultCode && testMessage) {
   });
 }
 
+// 첫 프로젝트 페이지: 완성 예시의 버튼 동작을 직접 확인합니다.
+const projectDemoButton = document.getElementById("projectDemoButton");
+const projectDemoMessage = document.getElementById("projectDemoMessage");
+
+if (projectDemoButton && projectDemoMessage) {
+  projectDemoButton.addEventListener("click", () => {
+    projectDemoMessage.textContent = "방문해 주셔서 감사합니다!";
+    animateExample(projectDemoMessage.closest(".project-final-preview"));
+    projectDemoButton.textContent = "인사 완료 ✓";
+    window.setTimeout(() => { projectDemoButton.textContent = "인사하기"; }, 1400);
+  });
+}
+
 // 각 예제 코드의 COPY 버튼 기능입니다.
 document.querySelectorAll(".copy-code").forEach((button) => {
   button.addEventListener("click", async () => {

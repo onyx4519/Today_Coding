@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="초보자를 위한 웹페이지 파일 구성과 화면 구조 설명">
+  <title>웹페이지 기본 구성 | 오늘의 코딩</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="structure">
+  <header class="site-header solid">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a>
+      <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+      <div class="nav-links">
+        <a data-nav="home" href="index.html">처음으로</a>
+        <a data-nav="structure" href="structure.html">페이지 구성</a>
+        <a data-nav="html" href="html.html">HTML</a>
+        <a data-nav="css" href="css.html">CSS</a>
+        <a data-nav="javascript" href="javascript.html">JavaScript</a>
+        <a data-nav="project" href="project.html">프로젝트 실습</a>
+        <a data-nav="extensions" href="extensions.html">확장 프로그램</a>
+        <a data-nav="roadmap" href="roadmap.html">학습 순서</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="lesson-hero lesson-structure">
+      <div class="container lesson-hero-grid">
+        <div>
+          <span class="lesson-index">02 · PAGE STRUCTURE</span>
+          <span class="big-symbol">LAYOUT</span>
+        </div>
+        <div>
+          <span class="analogy">쉽게 말하면, 방을 나누는 설계도</span>
+          <h1>코드를 쓰기 전에<br><span>페이지의 뼈대</span>부터 정해요.</h1>
+          <p>파일을 어디에 두고, 화면을 어떤 영역으로 나누며, 어떤 순서로 제작할지 알면 처음부터 다시 만드는 일을 줄일 수 있습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper lesson-content">
+      <div class="container content-grid">
+        <aside class="side-index">
+          <span>이 페이지에서 배울 내용</span>
+          <a href="#files">01 파일 구성</a>
+          <a href="#screen">02 화면 구성</a>
+          <a href="#order">03 제작 순서</a>
+          <a href="#practice">04 첫 페이지 설계</a>
+          <a href="#checklist">05 완성 점검</a>
+        </aside>
+
+        <div class="article">
+          <section id="files">
+            <span class="kicker">01 · FILE STRUCTURE</span>
+            <h2>먼저 한 폴더 안에 파일을 모읍니다.</h2>
+            <p>웹페이지에 필요한 HTML, CSS, JavaScript와 이미지 파일은 하나의 프로젝트 폴더 안에서 관리합니다. 파일 위치가 바뀌면 연결 주소도 함께 바뀐다는 점을 기억하세요.</p>
+
+            <div class="file-structure-grid">
+              <pre class="project-tree" aria-label="웹페이지 프로젝트 폴더 구조"><code>my-first-site/
+├─ index.html
+├─ styles.css
+├─ script.js
+└─ images/
+   └─ profile.jpg</code></pre>
+              <div class="file-role-list">
+                <div><code>index.html</code><p>페이지의 내용과 순서를 작성합니다.</p></div>
+                <div><code>styles.css</code><p>색상, 크기, 여백과 배치를 정합니다.</p></div>
+                <div><code>script.js</code><p>클릭이나 입력에 반응하는 기능을 만듭니다.</p></div>
+                <div><code>images/</code><p>사진과 그림 파일을 한곳에 모읍니다.</p></div>
+              </div>
+            </div>
+
+            <div class="note">
+              <b>처음에는 파일명을 그대로 사용하세요.</b>
+              <p>영문 소문자와 하이픈을 사용하고 공백은 피하는 것이 좋습니다. 예: <code>profile-image.jpg</code></p>
+            </div>
+          </section>
+
+          <section id="screen">
+            <span class="kicker">02 · SCREEN STRUCTURE</span>
+            <h2>화면을 역할이 다른 영역으로 나눕니다.</h2>
+            <p>웹페이지는 보통 머리말, 메뉴, 핵심 내용, 여러 내용 구역과 바닥글로 구성됩니다. 각 영역의 역할을 먼저 정하면 어떤 태그를 사용해야 할지 쉽게 판단할 수 있습니다.</p>
+
+            <div class="page-anatomy" aria-label="웹페이지 기본 영역 구조">
+              <div class="anatomy-header"><code>&lt;header&gt;</code><span>사이트 이름과 첫인상</span></div>
+              <div class="anatomy-nav"><code>&lt;nav&gt;</code><span>페이지 이동 메뉴</span></div>
+              <div class="anatomy-main">
+                <div><code>&lt;main&gt;</code><span>현재 페이지의 핵심 내용</span></div>
+                <div class="anatomy-section"><code>&lt;section&gt;</code><span>첫 번째 주제</span></div>
+                <div class="anatomy-section"><code>&lt;section&gt;</code><span>두 번째 주제</span></div>
+              </div>
+              <div class="anatomy-footer"><code>&lt;footer&gt;</code><span>만든 사람과 추가 정보</span></div>
+            </div>
+
+            <div class="code-block">
+              <div class="code-title"><span>index.html</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;나의 첫 웹페이지&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;a href="#about"&gt;소개&lt;/a&gt;
+      &lt;a href="#contact"&gt;연락처&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section id="about"&gt;
+      &lt;h2&gt;나를 소개합니다&lt;/h2&gt;
+      &lt;p&gt;웹 개발을 배우고 있습니다.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="contact"&gt;
+      &lt;h2&gt;연락처&lt;/h2&gt;
+      &lt;a href="mailto:hello@example.com"&gt;이메일 보내기&lt;/a&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;만든 사람: 홍길동&lt;/p&gt;
+  &lt;/footer&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+            </div>
+          </section>
+
+          <section id="order">
+            <span class="kicker">03 · BUILD ORDER</span>
+            <h2>이 순서대로 만들면 길을 잃지 않습니다.</h2>
+            <p>처음부터 디자인과 기능을 동시에 만들지 말고, 한 단계가 정상인지 확인한 다음 다음 단계로 넘어가세요.</p>
+
+            <ol class="build-order-list">
+              <li><span>01</span><div><b>목적 정하기</b><p>누구에게 무엇을 보여줄 페이지인지 한 문장으로 적습니다.</p></div></li>
+              <li><span>02</span><div><b>종이에 영역 그리기</b><p>머리말, 본문 구역, 버튼과 바닥글의 위치를 간단히 그립니다.</p></div></li>
+              <li><span>03</span><div><b>HTML로 내용 넣기</b><p>디자인 없이 제목, 문단, 목록과 링크가 올바른 순서로 보이는지 확인합니다.</p></div></li>
+              <li><span>04</span><div><b>CSS로 꾸미기</b><p>큰 화면부터 기본 디자인을 정하고 작은 모바일 화면도 함께 조정합니다.</p></div></li>
+              <li><span>05</span><div><b>JavaScript 기능 넣기</b><p>버튼처럼 사용자의 동작이 필요한 부분에만 기능을 추가합니다.</p></div></li>
+              <li><span>06</span><div><b>다시 확인하기</b><p>링크, 글자 잘림, 오타와 모바일 화면을 확인한 뒤 완성합니다.</p></div></li>
+            </ol>
+          </section>
+
+          <section id="practice">
+            <span class="kicker">04 · FIRST PAGE PLAN</span>
+            <h2>첫 프로젝트는 한 페이지로 충분합니다.</h2>
+            <p>처음에는 여러 페이지를 만들기보다 아래 네 구역을 가진 자기소개 페이지 하나를 완성하는 것을 목표로 하세요.</p>
+
+            <div class="first-page-plan">
+              <article><span>HEADER</span><h3>이름과 한 줄 소개</h3><p>방문자가 페이지의 목적을 바로 알 수 있게 작성합니다.</p></article>
+              <article><span>ABOUT</span><h3>나에 대한 설명</h3><p>전공, 관심 분야 또는 현재 배우는 내용을 소개합니다.</p></article>
+              <article><span>FAVORITES</span><h3>좋아하는 것 세 가지</h3><p>목록 태그를 사용해 짧고 읽기 쉽게 정리합니다.</p></article>
+              <article><span>CONTACT</span><h3>연락 링크</h3><p>이메일이나 SNS로 이동하는 링크 하나를 넣습니다.</p></article>
+            </div>
+            <a class="button primary structure-project-button" href="project.html">첫 프로젝트 시작하기 →</a>
+          </section>
+
+          <section id="checklist">
+            <span class="kicker">05 · FINAL CHECK</span>
+            <h2>완성했다고 말하기 전에 확인하세요.</h2>
+            <ul class="page-checklist">
+              <li><span>✓</span>파일 이름과 연결 경로의 대소문자가 같은가?</li>
+              <li><span>✓</span>모든 여는 태그가 필요한 위치에서 닫혔는가?</li>
+              <li><span>✓</span>페이지에 <code>&lt;h1&gt;</code>이 하나 있고 구역 제목 순서가 자연스러운가?</li>
+              <li><span>✓</span>모든 링크와 버튼이 의도한 대로 작동하는가?</li>
+              <li><span>✓</span>이미지에 내용을 설명하는 <code>alt</code>가 있는가?</li>
+              <li><span>✓</span>PC와 모바일에서 가로로 잘리거나 겹치는 내용이 없는가?</li>
+            </ul>
+          </section>
+
+          <div class="next-lesson">
+            <span>다음 단계</span>
+            <h3>페이지 구조를 이해했다면 HTML로 실제 내용을 작성해 보세요.</h3>
+            <a class="button primary" href="html.html">HTML 배우기 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a>
+      <p>좋은 웹페이지는 코드를 쓰기 전에 구조부터 정합니다.</p>
+      <a href="css.html">다음: CSS →</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTML CSS JavaScript로 완성하는 초보자 자기소개 웹페이지 실습">
+  <title>첫 웹페이지 실전 프로젝트 | 오늘의 코딩</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="project">
+  <header class="site-header solid">
+    <nav class="nav container" aria-label="주요 메뉴">
+      <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a>
+      <button class="menu-button" type="button" aria-label="메뉴 열기" aria-expanded="false">메뉴</button>
+      <div class="nav-links">
+        <a data-nav="home" href="index.html">처음으로</a>
+        <a data-nav="structure" href="structure.html">페이지 구성</a>
+        <a data-nav="html" href="html.html">HTML</a>
+        <a data-nav="css" href="css.html">CSS</a>
+        <a data-nav="javascript" href="javascript.html">JavaScript</a>
+        <a data-nav="project" href="project.html">프로젝트 실습</a>
+        <a data-nav="extensions" href="extensions.html">확장 프로그램</a>
+        <a data-nav="roadmap" href="roadmap.html">학습 순서</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="lesson-hero lesson-project">
+      <div class="container lesson-hero-grid">
+        <div>
+          <span class="lesson-index">PRACTICE · FIRST PROJECT</span>
+          <span class="big-symbol">BUILD</span>
+        </div>
+        <div>
+          <span class="analogy">목표: 나를 소개하는 한 페이지</span>
+          <h1>빈 폴더에서 시작해<br><span>작동하는 페이지</span>까지 만들어요.</h1>
+          <p>HTML로 내용을 만들고, CSS로 꾸민 다음, JavaScript로 버튼 기능을 추가합니다. 각 단계가 끝날 때마다 브라우저에서 결과를 확인하세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper lesson-content">
+      <div class="container content-grid">
+        <aside class="side-index">
+          <span>프로젝트 진행 순서</span>
+          <a href="#setup">01 파일 준비</a>
+          <a href="#project-html">02 HTML 작성</a>
+          <a href="#project-css">03 CSS 적용</a>
+          <a href="#project-js">04 기능 추가</a>
+          <a href="#project-mobile">05 모바일 대응</a>
+          <a href="#project-finish">06 최종 확인</a>
+        </aside>
+
+        <div class="article">
+          <div class="project-goal-card">
+            <span>PROJECT GOAL</span>
+            <h2>이름, 소개, 관심 분야와 버튼이 있는 자기소개 페이지</h2>
+            <ul>
+              <li>예상 시간: 2~3시간</li>
+              <li>필요 파일: HTML, CSS, JavaScript</li>
+              <li>완성 기준: PC·모바일 표시와 버튼 작동</li>
+            </ul>
+          </div>
+
+          <section id="setup">
+            <span class="kicker">01 · SETUP</span>
+            <h2>프로젝트 폴더와 파일을 만듭니다.</h2>
+            <p>VS Code에서 새 폴더를 연 다음 아래 세 파일을 만드세요. 세 파일의 이름과 위치가 같아야 HTML에서 CSS와 JavaScript를 올바르게 연결할 수 있습니다.</p>
+
+            <pre class="project-tree" aria-label="첫 프로젝트 파일 구조"><code>my-profile-page/
+├─ index.html
+├─ styles.css
+└─ script.js</code></pre>
+
+            <div class="project-step-result">
+              <b>이 단계의 완료 기준</b>
+              <p>세 파일이 VS Code 왼쪽 파일 목록에 보이고, <code>index.html</code>을 브라우저에서 열 수 있습니다.</p>
+            </div>
+          </section>
+
+          <section id="project-html">
+            <span class="kicker">02 · WRITE HTML</span>
+            <h2>HTML로 페이지의 내용과 순서를 만듭니다.</h2>
+            <p>아래 코드를 <code>index.html</code>에 작성하세요. 이름, 소개 문장, 관심 분야와 이메일 주소는 자신의 내용으로 바꿔도 됩니다.</p>
+
+            <div class="code-block">
+              <div class="code-title"><span>index.html</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>&lt;!doctype html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;홍길동의 소개 페이지&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class="profile-header"&gt;
+    &lt;nav&gt;
+      &lt;a href="#about"&gt;소개&lt;/a&gt;
+      &lt;a href="#favorites"&gt;관심 분야&lt;/a&gt;
+      &lt;a href="#contact"&gt;연락처&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;p class="eyebrow"&gt;MY FIRST WEBPAGE&lt;/p&gt;
+    &lt;h1&gt;안녕하세요, 홍길동입니다.&lt;/h1&gt;
+    &lt;p&gt;웹 개발을 배우고 있는 학생입니다.&lt;/p&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section id="about"&gt;
+      &lt;h2&gt;나를 소개합니다&lt;/h2&gt;
+      &lt;p&gt;새로운 기술을 직접 만들고 실험하는 것을 좋아합니다.&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;section id="favorites"&gt;
+      &lt;h2&gt;관심 분야&lt;/h2&gt;
+      &lt;ul&gt;
+        &lt;li&gt;웹 개발&lt;/li&gt;
+        &lt;li&gt;3D 프린팅&lt;/li&gt;
+        &lt;li&gt;로봇 제어&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+
+    &lt;section id="contact"&gt;
+      &lt;h2&gt;연락처&lt;/h2&gt;
+      &lt;p&gt;&lt;a href="mailto:hello@example.com"&gt;이메일 보내기&lt;/a&gt;&lt;/p&gt;
+      &lt;button id="helloButton" type="button"&gt;인사하기&lt;/button&gt;
+      &lt;p id="helloMessage" aria-live="polite"&gt;&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2026 홍길동의 첫 웹페이지&lt;/p&gt;
+  &lt;/footer&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+
+            <div class="project-step-result">
+              <b>브라우저에서 확인할 것</b>
+              <p>제목, 세 개의 메뉴, 소개·관심 분야·연락처 구역과 버튼이 순서대로 보여야 합니다.</p>
+            </div>
+          </section>
+
+          <section id="project-css">
+            <span class="kicker">03 · ADD CSS</span>
+            <h2>CSS로 간격과 색상, 카드 모양을 적용합니다.</h2>
+            <p>아래 코드를 <code>styles.css</code>에 작성하세요. 먼저 전체 구조가 적용되는지 확인한 다음 색상값을 자신이 원하는 색으로 바꿔보세요.</p>
+
+            <div class="code-block">
+              <div class="code-title"><span>styles.css</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0f0f17;
+  color: #f7f4ff;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.profile-header {
+  padding: 40px 20px 80px;
+  background: linear-gradient(135deg, #171727, #2d1d4f);
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 70px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: #b99af5;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 15px 0;
+  font-size: 48px;
+}
+
+main {
+  width: min(720px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 70px 0;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 30px;
+  border: 1px solid #343444;
+  border-radius: 16px;
+  background: #181822;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+button {
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 9px;
+  background: #8055ea;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#helloMessage {
+  min-height: 28px;
+  color: #b99af5;
+}
+
+footer {
+  padding: 28px 20px;
+  background: #09090e;
+  color: #aaa6b4;
+  text-align: center;
+}</code></pre>
+            </div>
+
+            <div class="project-step-result">
+              <b>CSS가 적용되지 않을 때</b>
+              <p><code>index.html</code>과 <code>styles.css</code>가 같은 폴더에 있는지, <code>href="styles.css"</code>의 철자가 같은지 확인하세요.</p>
+            </div>
+          </section>
+
+          <section id="project-js">
+            <span class="kicker">04 · ADD JAVASCRIPT</span>
+            <h2>버튼을 누르면 인사말이 나오게 만듭니다.</h2>
+            <p>아래 코드를 <code>script.js</code>에 작성하세요. HTML의 <code>id</code>와 JavaScript에서 찾는 이름이 정확히 같아야 합니다.</p>
+
+            <div class="code-block">
+              <div class="code-title"><span>script.js</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>const helloButton = document.querySelector("#helloButton");
+const helloMessage = document.querySelector("#helloMessage");
+
+helloButton.addEventListener("click", () =&gt; {
+  helloMessage.textContent = "방문해 주셔서 감사합니다!";
+});</code></pre>
+            </div>
+
+            <div class="project-step-result">
+              <b>버튼이 작동하지 않을 때</b>
+              <p><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code>가 <code>&lt;/body&gt;</code> 바로 위에 있는지, 두 <code>id</code>의 철자가 같은지 확인하세요.</p>
+            </div>
+          </section>
+
+          <section id="project-mobile">
+            <span class="kicker">05 · MOBILE</span>
+            <h2>작은 화면에서는 제목과 메뉴를 줄입니다.</h2>
+            <p>아래 코드를 <code>styles.css</code>의 가장 아래에 추가하세요. 화면 너비가 600px 이하일 때만 적용됩니다.</p>
+
+            <div class="code-block">
+              <div class="code-title"><span>styles.css · 마지막 줄</span><button class="copy-code" type="button">COPY</button></div>
+              <pre><code>@media (max-width: 600px) {
+  .profile-header {
+    padding: 30px 16px 55px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  main {
+    width: min(100% - 28px, 720px);
+    padding: 45px 0;
+  }
+
+  section {
+    padding: 22px;
+  }
+}</code></pre>
+            </div>
+
+            <div class="note">
+              <b>모바일에서는 실제 휴대전화에서도 확인하세요.</b>
+              <p>가로 스크롤이 생기지 않는지, 메뉴와 버튼을 손가락으로 누르기 쉬운지, 제목이 잘리지 않는지 확인합니다.</p>
+            </div>
+          </section>
+
+          <section id="project-finish">
+            <span class="kicker">06 · FINISH</span>
+            <h2>완성된 동작을 확인해 보세요.</h2>
+            <p>아래 결과는 프로젝트에서 만들게 될 화면을 간단히 재현한 것입니다. 버튼을 눌러 JavaScript 기능까지 확인하세요.</p>
+
+            <div class="project-final-preview">
+              <div class="project-demo-hero">
+                <span>MY FIRST WEBPAGE</span>
+                <h3>안녕하세요, 홍길동입니다.</h3>
+                <p>웹 개발을 배우고 있는 학생입니다.</p>
+              </div>
+              <div class="project-demo-content">
+                <h4>나를 소개합니다</h4>
+                <p>새로운 기술을 직접 만들고 실험하는 것을 좋아합니다.</p>
+                <button id="projectDemoButton" type="button">인사하기</button>
+                <p id="projectDemoMessage" class="project-demo-message" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <ul class="page-checklist project-final-checklist">
+              <li><span>✓</span>HTML, CSS와 JavaScript 세 파일이 같은 폴더에 있는가?</li>
+              <li><span>✓</span>메뉴 링크를 누르면 해당 구역으로 이동하는가?</li>
+              <li><span>✓</span>인사하기 버튼을 누르면 문구가 나타나는가?</li>
+              <li><span>✓</span>PC와 모바일에서 가로로 잘리는 부분이 없는가?</li>
+              <li><span>✓</span>예시의 이름과 소개를 자신의 내용으로 바꾸었는가?</li>
+            </ul>
+          </section>
+
+          <div class="next-lesson">
+            <span>프로젝트를 완성했다면</span>
+            <h3>학습 순서로 돌아가 부족했던 부분을 다시 확인하세요.</h3>
+            <a class="button primary" href="roadmap.html">7일 학습 순서 보기 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <a class="brand" href="index.html"><span class="brand-mark">&lt;/&gt;</span><span>오늘의 코딩</span></a>
+      <p>한 단계씩 확인하면 첫 웹페이지를 끝까지 완성할 수 있습니다.</p>
+      <a href="roadmap.html">학습 순서로 돌아가기 →</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
